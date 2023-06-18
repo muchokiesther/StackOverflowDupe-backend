@@ -1,0 +1,68 @@
+###
+POST   http://localhost:4000/users
+Content-Type: application/json
+
+
+{
+    "userName":"sue",
+    "email":"susanmwangi3030@gmail.com",
+    "password":"Wamuyu@2023"
+}
+
+//get all users
+###
+GET   http://localhost:4000/users
+
+
+// get one user by email
+###
+GET  http://localhost:4000/users/email/muchoki@gmail.com
+
+
+// get user by ID
+###
+GET   http://localhost:4000/users/1234a
+
+
+//Update user
+###
+PUT  http://localhost:4000/users/a5ebd33b-1dec-4069-b20e-d29acce84a9a
+Content-Type: application/json
+
+{
+    "userName":"loveyours",
+    "email":"sunday@gmail.com",
+    "password":"Wamuyu@2023"
+}
+
+//delete user
+###
+DELETE http://localhost:4000/users/1234a
+Content-Type:application/json
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1NWIwYzc5Ni1iMzNlLTQ1ZDgtYmRhMy03MmMyNjNmYzg5NDciLCJ1c2VyTmFtZSI6IlNvbnlhIiwiZW1haWwiOiJTb255YUBnbWFpbC5jb20iLCJyb2xlcyI6InVzZXIiLCJpc1Jlc2V0IjowLCJpYXQiOjE2ODcxMDQ3Njh9.nsij411DYfFwsLwjVYe_MmgyP_8rSW1Yo_Zhe-WaPCc
+
+//login
+###
+POST http://localhost:4000/users/login
+Content-Type: application/json
+
+{
+    
+    "email":"Sonya@gmail.com",
+    "password":"Wamuyu@2023"
+
+}
+
+
+//add question
+###
+POST http://localhost:4000/questions/9c867fbd-a697-4ca2-8075-dc29c46df51e
+Content-Type: application/json
+
+{
+  "title": "Your question title",
+  "body": "Your question body"
+}
+
+
+
