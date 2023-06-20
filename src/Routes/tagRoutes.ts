@@ -1,6 +1,10 @@
 import { Router } from "express";
+import { getAllTags } from "../controllers/tagsController";
+import { verifyToken } from "../Middlewares/creationtoken";
 
 
-const commentsRoutes = Router()
+const tagRoutes = Router()
 
-export default  commentsRoutes
+tagRoutes.get('',verifyToken,getAllTags)
+
+export default  tagRoutes

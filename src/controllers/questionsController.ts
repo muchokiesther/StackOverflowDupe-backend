@@ -7,6 +7,7 @@ import { DecodedData, questionsExtendedRequest } from '../interfaces';
 //add a question
 export const addQuestion = async (req: questionsExtendedRequest, res: Response) => {
     try {
+      if (req.info && req.info.roles === 'user') {
       const { title, body , TAGS} = req.body;
       const { userId } = req.params;
       const questionId = uid();
@@ -16,6 +17,9 @@ export const addQuestion = async (req: questionsExtendedRequest, res: Response) 
         await DatabaseHelper.exec('addquestiontag',{tagId:tag.tagId, questionsId:questionId})
       });
       res.status(201).json({ message: 'Question added successfully' });
+    } else {
+      return res.status(403).json({ message: "Unauthorized access" });
+    }
     } catch (error) {
       console.error('Error adding question:', error);
       res.status(500).json({ error: 'Internal server error' });
@@ -23,8 +27,9 @@ export const addQuestion = async (req: questionsExtendedRequest, res: Response) 
   };
   
 //get all questions
-export const getQuestions = async (req: Request, res: Response) => {
+export const getQuestions = async (req: questionsExtendedRequest, res: Response) => {
   try {
+   
     const result = await DatabaseHelper.exec('getAllquestions');
     const questions = result.recordset;
     res.status(200).json(questions);
@@ -34,13 +39,14 @@ export const getQuestions = async (req: Request, res: Response) => {
   }
 };
 
-//get one question by qUESTION ID
-export const getQuestion = async (req: Request, res: Response) => {
+//get one question by questionId
+export const getQuestion = async (req:questionsExtendedRequest , res: Response) => {
     try {
-      const { questionsId } = req.params;
+
+      const { questionId } = req.params;
       const result = await DatabaseHelper.exec(
         'getOnequestions',
-        { questionsId: questionsId } 
+        { questionsId: questionId } 
       );
       const question = result.recordset[0];
       if (!question) {
@@ -55,8 +61,9 @@ export const getQuestion = async (req: Request, res: Response) => {
   };
 
   //get question posted by one user 
-  export const getQuestionByUserid = async (req: Request, res: Response) => {
+  export const getQuestionByUserid = async (req: questionsExtendedRequest , res: Response) => {
     try {
+  
       const { userId } = req.params;
       const result = await DatabaseHelper.exec(
         'getquestionsByuserid',
@@ -68,6 +75,7 @@ export const getQuestion = async (req: Request, res: Response) => {
       } else {
         res.status(200).json(question);
       }
+   
     } catch (error) {
       console.error('Error retrieving questions:', error);
       res.status(500).json({ error: 'Internal server error' });
@@ -78,6 +86,7 @@ export const getQuestion = async (req: Request, res: Response) => {
 
 export const updateQuestion = async (req: questionsExtendedRequest, res: Response) => {
   try {
+    if (req.info && req.info.roles === 'user') {
     const {  questionId,userId} = req.params;
     const {  title, body ,TAGS } = req.body;
     await DatabaseHelper.exec('updateQuestion', { questionId,title, body });
@@ -85,14 +94,18 @@ export const updateQuestion = async (req: questionsExtendedRequest, res: Respons
       await DatabaseHelper.exec('updatequetiontags',{tagId:tag.tagId, questionsId:questionId})
     });
     res.status(200).json({ message: 'Question updated successfully' });
+  } else {
+    return res.status(403).json({ message: "Unauthorized access" });
+  }
   } catch (error) {
     res.status(500).json(error);
   }
 };
 
  //delete quetsion
-export const deleteQuestion = async (req: Request <{questionId:string}>, res: Response) => {
+export const deleteQuestion = async (req: questionsExtendedRequest,  res: Response) => {
   try {
+    if (req.info && req.info.roles === 'admin') {
     const { questionId } = req.params;
     const result = await DatabaseHelper.exec(
       'getOnequestions',
@@ -101,11 +114,13 @@ export const deleteQuestion = async (req: Request <{questionId:string}>, res: Re
     const question = result.recordset[0];
     if (!question) {
       res.status(404).json({ error: 'Question not found' });
-    } else {
+    }else {
       await DatabaseHelper.exec('deleteQuestion', { questionsId: questionId});
       return  res.status(200).json({ message: 'Question deleted successfully' });
     }
-    
+  }else {
+    return res.status(403).json({ message: "Unauthorized access" });
+  }
    
   } catch (error) {
     console.error('Error deleting question:', error);

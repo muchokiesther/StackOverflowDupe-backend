@@ -119,6 +119,11 @@ export  interface votesExtendedRequest extends Request {
   };
 }
 
+
+export interface Tag{
+  tagId:string
+  tagName:string
+}
 export interface tagsExtendedRequest extends Request {
   body: {
     tagId:string

@@ -26,6 +26,20 @@ CREATE TABLE ANSWERS (
   isDeleted INT DEFAULT 0;
 );
 
+
+
+
+-- FOR BG SERVICE 
+CREATE OR ALTER PROCEDURE GetJoinedData
+AS
+BEGIN
+    SELECT u.*, a.*, q.title
+    FROM USERS u
+    INNER JOIN ANSWERS a ON u.userId = a.userId
+    INNER JOIN QUESTIONS q ON q.questionsId = a.questionsId;
+END;
+
+
 ALTER TABLE ANSWERS
 ADD isDeleted INT DEFAULT 0;
 
