@@ -101,7 +101,7 @@ POST http://localhost:4000/answer/9c867fbd-a697-4ca2-8075-dc29c46df51e/f9ea80e6-
 Content-Type: application/json
 
 {
- "body":"Hey i think ik what you didi wrong lemme show you how its done in a few"
+ "body":"Hey what what what you didi wrong lemme show you how its done in a few"
 }
 
 //set preferred
@@ -118,18 +118,42 @@ Content-Type: application/json
 GET  http://localhost:4000/answer/f9ea80e6-2da7-48a7-9d81-5f726b4c7017
 
 ###
-//get one question posted by user
-GET  http://localhost:4000/answer/9c867fbd-a697-4ca2-8075-dc29c46df51e
+//get one answer posted by userid
+GET  http://localhost:4000/answer/useranswer/9c867fbd-a697-4ca2-8075-dc29c46df51e
 
 
-//add comment
+//add comment userid/questionsid/answerId
 ###
-POST  http://localhost:4000/comments/9c867fbd-a697-4ca2-8075-dc29c46df51e/805cc6d1-aec5-43ac-8ea8-966681848a99
+POST  http://localhost:4000/comments/9c867fbd-a697-4ca2-8075-dc29c46df51e/f9ea80e6-2da7-48a7-9d81-5f726b4c7017/805cc6d1-aec5-43ac-8ea8-966681848a99
 Content-Type: application/json
 
 {
   "body":"why oh why"
 }
-//get one comment 
 
-//get all comments
+
+//get all comments by answerId
+###
+GET  http://localhost:4000/comments/805cc6d1-aec5-43ac-8ea8-966681848a99
+
+
+//add an upvote userId/answerId
+###
+POST  http://localhost:4000/votes/upvote/9c867fbd-a697-4ca2-8075-dc29c46df51e/805cc6d1-aec5-43ac-8ea8-966681848a99
+Content-Type: application/json
+
+{
+
+}
+
+// add a downvote userId/answerId
+
+###
+POST  http://localhost:4000/votes/downvote/9c867fbd-a697-4ca2-8075-dc29c46df51e/805cc6d1-aec5-43ac-8ea8-966681848a99
+Content-Type: application/json
+
+{
+
+}
+
+

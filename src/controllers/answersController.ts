@@ -9,14 +9,13 @@ export const addAnswer = async (req: answersExtendedRequest, res: Response) => {
       const { body, } = req.body;
       const { userId, questionId } = req.params;
       const answerId = uid();
-    console.log(userId,questionId)
-      await DatabaseHelper.exec('addAnswer', {
+    (  await DatabaseHelper.exec('addAnswer', {
         answerId: answerId,
         userId: userId,
         questionsId: questionId,
         body: body,
         
-      });
+      })).recordset;
   
       res.status(201).json({ message: 'Answer added successfully' });
     } catch (error) {
@@ -29,7 +28,7 @@ export const addAnswer = async (req: answersExtendedRequest, res: Response) => {
     try {
       const { answerId } = req.params;
   
-      await DatabaseHelper.exec('isPrefferedAnswer', { answerId }); 
+      (await DatabaseHelper.exec('isPrefferedAnswer', { answerId })).recordset; 
   
       res.status(200).json({ message: 'Answer marked as preferred' });
     } catch (error) {
@@ -42,24 +41,24 @@ export const addAnswer = async (req: answersExtendedRequest, res: Response) => {
     try {
       const { questionId } = req.params;
   
-      const result = await DatabaseHelper.exec('GetAnswersForQuestion', { questionId });
+      const result = (await DatabaseHelper.exec('GetAnswersForQuestion', { questionId })).recordset;
   
-      res.status(200).json({ answers: result });
+      res.status(200).json( result );
     } catch (error) {
       console.error('Error retrieving answers:', error);
       res.status(500).json({ error: 'Internal server error' });
     }
   };
 
-  //get one answer by answerID
+  //get one answer by userID
 
   export const getAnswerForUserQuestion = async (req: Request, res: Response) => {
     try {
-      const { questionId } = req.params;
+      const { userId } = req.params;
   
-      const result = await DatabaseHelper.exec('GetQuestionByUserId', { questionId });
-  
-      res.status(200).json({ answers: result });
+      const result = (await DatabaseHelper.exec('getAnswerByUserId', { userId })).recordset;
+  console.log(userId)
+      res.status(200).json( result );
     } catch (error) {
       console.error('Error retrieving answers:', error);
       res.status(500).json({ error: 'Internal server error' });

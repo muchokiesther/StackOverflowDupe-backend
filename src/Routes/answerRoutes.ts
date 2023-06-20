@@ -5,5 +5,5 @@ const answerRoutes = Router()
 answerRoutes.post('/:userId/:questionId',addAnswer)
 answerRoutes.post('/:answerId',setPreferred)
 answerRoutes.get('/:questionId',getAnswersForQuestion )
-answerRoutes.get('/:userId',getAnswerForUserQuestion)
+answerRoutes.get('/useranswer/:userId',getAnswerForUserQuestion)
 export default answerRoutes

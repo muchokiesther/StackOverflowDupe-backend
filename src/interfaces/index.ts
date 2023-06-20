@@ -66,9 +66,6 @@ export  interface questionsExtendedRequest extends Request {
 
   export  interface answersExtendedRequest extends Request {
     body: {      
-
-        
-       
         answerId:string
         questionsId:string
         body:string
@@ -90,7 +87,7 @@ export  interface questionsExtendedRequest extends Request {
   body: {
     commentId: string;
     userId: string;
-    questionId: string;
+    questionsId: string;
     answerId: string;
     body: string;
   };
@@ -99,5 +96,42 @@ export  interface questionsExtendedRequest extends Request {
     commentId: string;
     answerid: string;
     userId: string;
+    questionsId:string;
+
   };
 }
+
+
+export  interface votesExtendedRequest extends Request {
+  body: {
+    voteId : string;
+    answerId: string;
+    userId: string;
+    upVotes: number;
+    downVotes: number;
+  };
+  info?: DecodedData;
+  params: {
+    voteId : string;
+    answerId: string;
+    userId: string;
+
+  };
+}
+
+export interface tagsExtendedRequest extends Request {
+  body: {
+    tagId:string
+    tagName:string
+  };
+  info?: DecodedData;
+  params: {
+    tagId:string
+    tagName:string
+
+  };
+}
+
+
+
+
