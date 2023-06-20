@@ -56,13 +56,80 @@ Content-Type: application/json
 
 //add question
 ###
-POST http://localhost:4000/questions/9c867fbd-a697-4ca2-8075-dc29c46df51e
+POST http://localhost:4000/questions/06768a7f-5883-4df0-8a19-2040e9970ab1
 Content-Type: application/json
 
 {
-  "title": "Your question title",
-  "body": "Your question body"
+  "title": "DLDLDLDLD",
+  "body": "TJDHFUUJFUJFJUF",
+  "TAGS":[{"tagId":2,"tagName":"HTML"}]
+}
+
+//get all questions
+###
+GET http://localhost:4000/questions
+
+//get one question by ID
+###
+GET  http://localhost:4000/questions/f9ea80e6-2da7-48a7-9d81-5f726b4c7017
+
+
+//get  questions by userid
+###
+GET  http://localhost:4000/questions/user/06768a7f-5883-4df0-8a19-2040e9970ab1
+
+
+// delete question by ID
+###
+DELETE  http://localhost:4000/questions/06768a7f-5883-4df0-8a19-2040e9970ab1/2d074d7f-4e01-4361-a184-a108dc0482a6
+
+//Update a question  userid/questionsid
+###
+PUT  http://localhost:4000/questions/9c867fbd-a697-4ca2-8075-dc29c46df51e/f9ea80e6-2da7-48a7-9d81-5f726b4c7017
+Content-Type: application/json
+
+{
+  "title": "it works but why",
+  "body": "jijijijiji",
+  "TAGS":[{"tagId":4,"tagName":"JavaScript"}]
 }
 
 
+//add answer
+###
+POST http://localhost:4000/answer/9c867fbd-a697-4ca2-8075-dc29c46df51e/f9ea80e6-2da7-48a7-9d81-5f726b4c7017
+Content-Type: application/json
 
+{
+ "body":"Hey i think ik what you didi wrong lemme show you how its done in a few"
+}
+
+//set preferred
+###
+POST  http://localhost:4000/answer/805cc6d1-aec5-43ac-8ea8-966681848a99
+Content-Type: application/json
+
+{
+  "isPreferred":"1"
+}
+
+//get answers for a  question by using questionId
+###
+GET  http://localhost:4000/answer/f9ea80e6-2da7-48a7-9d81-5f726b4c7017
+
+###
+//get one question posted by user
+GET  http://localhost:4000/answer/9c867fbd-a697-4ca2-8075-dc29c46df51e
+
+
+//add comment
+###
+POST  http://localhost:4000/comments/9c867fbd-a697-4ca2-8075-dc29c46df51e/805cc6d1-aec5-43ac-8ea8-966681848a99
+Content-Type: application/json
+
+{
+  "body":"why oh why"
+}
+//get one comment 
+
+//get all comments
