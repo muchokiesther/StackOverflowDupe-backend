@@ -9,7 +9,7 @@ export const addAnswer = async (req: answersExtendedRequest, res: Response) => {
       const { body, } = req.body;
       const { userId, questionId } = req.params;
       const answerId = uid();
-    (  await DatabaseHelper.exec('addAnswer', {
+    (await DatabaseHelper.exec('addAnswer', {
         answerId: answerId,
         userId: userId,
         questionsId: questionId,
@@ -17,9 +17,8 @@ export const addAnswer = async (req: answersExtendedRequest, res: Response) => {
         
       })).recordset;
   
-      res.status(201).json({ message: 'Answer added successfully' });
+      res.status(201).json({ message: 'Answer added successfully' })
     } catch (error) {
-      console.error('Error adding answer:', error);
       res.status(500).json({ error: 'Internal server error' });
     }
   };
