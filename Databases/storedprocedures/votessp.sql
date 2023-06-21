@@ -67,3 +67,23 @@ GO
 
 
 SELECT * FROM VOTES
+
+
+USE [STACKOVERFLOW]
+GO
+/****** Object:  StoredProcedure [dbo].[GetAnswersForQuestion]    Script Date: 6/21/2023 5:31:49 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER   PROCEDURE [dbo].[GetAnswersForQuestion]
+    @questionId VARCHAR(255)
+AS
+BEGIN
+    SELECT *,
+	(SELECT COUNT(*) FROM VOTES v WHERE v.answerId= a.answerId AND v.upVotes=1 )-
+	(SELECT COUNT(*) FROM VOTES v WHERE v.answerId=a.answerId AND v.downVotes=1 )
+    AS totalVotes
+	FROM ANSWERS a
+    WHERE questionsId = @questionId	 AND isDeleted = 0;
+END

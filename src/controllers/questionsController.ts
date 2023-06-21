@@ -93,9 +93,12 @@ export const updateQuestion = async (req: questionsExtendedRequest, res: Respons
     const result = await DatabaseHelper.exec(
       'getOnequestions',
       { questionsId: questionId } 
+
     );
     const question:questions = result.recordset[0];
     if (!question ||userId != question.userId) {
+      console.log(question.userId);
+      
       res.status(404).json({ error: 'Question not found' });
     }else{
     await DatabaseHelper.exec('updateQuestion', { userId,questionId,title, body });

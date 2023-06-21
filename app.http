@@ -96,14 +96,14 @@ token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI5Yzg2N2ZiZC1hNjk3LTRjY
 
 //Update a question  userid/questionsid
 ###
-PUT  http://localhost:4000/questions/yuyu-0612-4933-9837-c9da132dabaa/2fe23db6-4ebb-4677-8a64-cfc60ccbc7d4
+PUT  http://localhost:4000/questions/414a66c1-0612-4933-9837-c9da132dabaa/c5334408-f59c-45af-9d4f-76a012e6a0e2
 Content-Type: application/json
 token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0MTRhNjZjMS0wNjEyLTQ5MzMtOTgzNy1jOWRhMTMyZGFiYWEiLCJ1c2VyTmFtZSI6IkJlbGluZGEiLCJlbWFpbCI6ImJlbGluZGFAZ21haWwuY29tIiwicm9sZXMiOiJ1c2VyIiwiaXNSZXNldCI6MCwiaWF0IjoxNjg3MzUxNTExLCJleHAiOjE2ODc1MjQzMTF9.r7JqrMr8RkkDB8RxZIVeWvPfpjIFsQqDNu5YHrMR304
 
 
 {
-  "title": "weweewewewe",
-  "body": "hey i need assistance",
+  "title": "COMPUTERS ARE DUMB",
+  "body": "HHHHHHHHJHJJ",
   "TAGS":[{"tagId":2,"tagName":"HTML"}]
 }
 
