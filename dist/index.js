@@ -14,6 +14,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const node_cron_1 = __importDefault(require("node-cron"));
 const Welcome_1 = require("./EmailServices/Welcome");
+const preferred_1 = require("./EmailServices/preferred");
 node_cron_1.default.schedule(' */2 * * * * *', () => __awaiter(void 0, void 0, void 0, function* () {
     yield (0, Welcome_1.sendWelcomeEmail)();
+    yield (0, preferred_1.sendPreferredEmail)();
 }));
