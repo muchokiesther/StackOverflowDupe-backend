@@ -16,7 +16,7 @@ export const addUser = async (req: Request, res: Response) => {
       // validation details
       const { error } = regSchema.validate(req.body);
       if (error) {
-        return res.status(400).json(error.details[0].message); // Updated status code to 400
+        return res.status(400).json(error.details[0].message); 
       }
   
       let hashedPassword = await bcrypt.hash(password, 10);
@@ -139,7 +139,7 @@ export const loginUser= async (req:Request, res:Response)=>{
             const {password, isDeleted,emailSent,...rest}=usr
             return rest
          })
-         const token = jwt.sign(payload[0], process.env.SECRET_KEY as string)
+         const token = jwt.sign(payload[0], process.env.SECRET_KEY as string, {expiresIn:'172800s'})
           res.status(200).json({token,role:payload[0].roles ,username:payload[0].userName})
 
     } catch (error:any) {

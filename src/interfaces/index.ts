@@ -49,7 +49,7 @@ export  interface questionsExtendedRequest extends Request {
 
         
         questionId:string
-       
+        userId:string
    title:string
     body:string
     TAGS:[]

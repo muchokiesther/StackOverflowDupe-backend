@@ -4,8 +4,8 @@ Content-Type: application/json
 
 
 {
-    "userName":"wamuyiuu",
-    "email":"wamuyuuuu@gmail.com",
+    "userName":"Belinda",
+    "email":"belinda@gmail.com",
     "password":"Wamuyu@2023"
 }
 
@@ -13,13 +13,13 @@ Content-Type: application/json
 ###
 GET   http://localhost:4000/users
 Content-Type: application/json
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGUxZjY2My1hMDNhLTQ4ZjktYWI1My1mYTcwNWRjMDY0YjciLCJ1c2VyTmFtZSI6IndhbXV5aXV1IiwiZW1haWwiOiJ3YW11eXV1dXVAZ21haWwuY29tIiwicm9sZXMiOiJ1c2VyIiwiaXNSZXNldCI6MCwiaWF0IjoxNjg3MjkzMzg0fQ.4JiVXWDY7I3h_mKj5HqyAMNoC5KYhpztC7J45mMmT18
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1NWIwYzc5Ni1iMzNlLTQ1ZDgtYmRhMy03MmMyNjNmYzg5NDciLCJ1c2VyTmFtZSI6IlNvbnlhIiwiZW1haWwiOiJTb255YUBnbWFpbC5jb20iLCJyb2xlcyI6InVzZXIiLCJpc1Jlc2V0IjowLCJpYXQiOjE2ODczNDc4OTQsImV4cCI6MTY4NzUyMDY5NH0.NLsIbMoNjU7ER8oYHcz-s1EaYlF6nL-D_guaBoEwnwQ
 
 // get one user by email
 ###
-GET  http://localhost:4000/users/email/muchoki@gmail.com
+GET  http://localhost:4000/users/email/belinda@gmail.com
 Content-Type: application/json
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGUxZjY2My1hMDNhLTQ4ZjktYWI1My1mYTcwNWRjMDY0YjciLCJ1c2VyTmFtZSI6IndhbXV5aXV1IiwiZW1haWwiOiJ3YW11eXV1dXVAZ21haWwuY29tIiwicm9sZXMiOiJ1c2VyIiwiaXNSZXNldCI6MCwiaWF0IjoxNjg3MjkzMzg0fQ.4JiVXWDY7I3h_mKj5HqyAMNoC5KYhpztC7J45mMmT18
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0MTRhNjZjMS0wNjEyLTQ5MzMtOTgzNy1jOWRhMTMyZGFiYWEiLCJ1c2VyTmFtZSI6IkJlbGluZGEiLCJlbWFpbCI6ImJlbGluZGFAZ21haWwuY29tIiwicm9sZXMiOiJ1c2VyIiwiaXNSZXNldCI6MCwiaWF0IjoxNjg3MzUxNTExLCJleHAiOjE2ODc1MjQzMTF9.r7JqrMr8RkkDB8RxZIVeWvPfpjIFsQqDNu5YHrMR304
 
 // get user by ID
 ###
@@ -34,8 +34,8 @@ Content-Type: application/json
 token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGUxZjY2My1hMDNhLTQ4ZjktYWI1My1mYTcwNWRjMDY0YjciLCJ1c2VyTmFtZSI6IndhbXV5aXV1IiwiZW1haWwiOiJ3YW11eXV1dXVAZ21haWwuY29tIiwicm9sZXMiOiJ1c2VyIiwiaXNSZXNldCI6MCwiaWF0IjoxNjg3MjkzMzg0fQ.4JiVXWDY7I3h_mKj5HqyAMNoC5KYhpztC7J45mMmT18
 
 {
-    "userName":"loveeyours",
-    "email":"sundayy@gmail.com",
+    "userName":"Belinda",
+    "email":"belinda@gmail.com",
     "password":"Wamuyu@2023"
 }
 
@@ -52,20 +52,20 @@ Content-Type: application/json
 
 {
     
-    "email":"muchoki@gmail.com",
-    "password":"Wamuyu@20"
+    "email":"belinda@gmail.com",
+    "password":"Wamuyu@2023"
 
 }
 
 
 //add question
 ###
-POST http://localhost:4000/questions/e5ea9859-ebde-4570-a68c-73e45b2099cc
+POST http://localhost:4000/questions/414a66c1-0612-4933-9837-c9da132dabaa
 Content-Type: application/json
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGUxZjY2My1hMDNhLTQ4ZjktYWI1My1mYTcwNWRjMDY0YjciLCJ1c2VyTmFtZSI6IndhbXV5aXV1IiwiZW1haWwiOiJ3YW11eXV1dXVAZ21haWwuY29tIiwicm9sZXMiOiJ1c2VyIiwiaXNSZXNldCI6MCwiaWF0IjoxNjg3MjkzMzg0fQ.4JiVXWDY7I3h_mKj5HqyAMNoC5KYhpztC7J45mMmT18
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0MTRhNjZjMS0wNjEyLTQ5MzMtOTgzNy1jOWRhMTMyZGFiYWEiLCJ1c2VyTmFtZSI6IkJlbGluZGEiLCJlbWFpbCI6ImJlbGluZGFAZ21haWwuY29tIiwicm9sZXMiOiJ1c2VyIiwiaXNSZXNldCI6MCwiaWF0IjoxNjg3MzUxNTExLCJleHAiOjE2ODc1MjQzMTF9.r7JqrMr8RkkDB8RxZIVeWvPfpjIFsQqDNu5YHrMR304
 
 {
-  "title": "Hey i just wanted to know how to used JSON",
+  "title": "wassupppppp",
   "body": "lorem lorem lorem88",
   "TAGS":[{"tagId":2,"tagName":"HTML"}]
 }
@@ -74,11 +74,11 @@ token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGUxZjY2My1hMDNhLTQ4Z
 ###
 GET http://localhost:4000/questions
 Content-Type:application/json
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGUxZjY2My1hMDNhLTQ4ZjktYWI1My1mYTcwNWRjMDY0YjciLCJ1c2VyTmFtZSI6IndhbXV5aXV1IiwiZW1haWwiOiJ3YW11eXV1dXVAZ21haWwuY29tIiwicm9sZXMiOiJ1c2VyIiwiaXNSZXNldCI6MCwiaWF0IjoxNjg3MjkzMzg0fQ.4JiVXWDY7I3h_mKj5HqyAMNoC5KYhpztC7J45mMmT18
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1NWIwYzc5Ni1iMzNlLTQ1ZDgtYmRhMy03MmMyNjNmYzg5NDciLCJ1c2VyTmFtZSI6IlNvbnlhIiwiZW1haWwiOiJTb255YUBnbWFpbC5jb20iLCJyb2xlcyI6InVzZXIiLCJpc1Jlc2V0IjowLCJpYXQiOjE2ODczNDc4OTQsImV4cCI6MTY4NzUyMDY5NH0.NLsIbMoNjU7ER8oYHcz-s1EaYlF6nL-D_guaBoEwnwQ
 
 //get one question by ID
 ###
-GET  http://localhost:4000/questions/5b47964a-6c85-430d-b5d3-e037f350737e
+GET  http://localhost:4000/questions/3934ac81-9f31-45bb-b717-dfcd05da7b01
 Content-Type:application/json
 token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGUxZjY2My1hMDNhLTQ4ZjktYWI1My1mYTcwNWRjMDY0YjciLCJ1c2VyTmFtZSI6IndhbXV5aXV1IiwiZW1haWwiOiJ3YW11eXV1dXVAZ21haWwuY29tIiwicm9sZXMiOiJ1c2VyIiwiaXNSZXNldCI6MCwiaWF0IjoxNjg3MjkzMzg0fQ.4JiVXWDY7I3h_mKj5HqyAMNoC5KYhpztC7J45mMmT18
 
@@ -96,14 +96,15 @@ token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI5Yzg2N2ZiZC1hNjk3LTRjY
 
 //Update a question  userid/questionsid
 ###
-PUT  http://localhost:4000/questions/9c867fbd-a697-4ca2-8075-dc29c46df51e/123f4d6f-5d27-4565-b24e-1246eba5647d
+PUT  http://localhost:4000/questions/yuyu-0612-4933-9837-c9da132dabaa/2fe23db6-4ebb-4677-8a64-cfc60ccbc7d4
 Content-Type: application/json
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1NWIwYzc5Ni1iMzNlLTQ1ZDgtYmRhMy03MmMyNjNmYzg5NDciLCJ1c2VyTmFtZSI6IlNvbnlhIiwiZW1haWwiOiJTb255YUBnbWFpbC5jb20iLCJyb2xlcyI6InVzZXIiLCJpc1Jlc2V0IjowLCJpYXQiOjE2ODcyOTEwMzJ9.M3R0PqkiwwGsx40acWa-AImz3P1HZDzVbxT7RATBuTo
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0MTRhNjZjMS0wNjEyLTQ5MzMtOTgzNy1jOWRhMTMyZGFiYWEiLCJ1c2VyTmFtZSI6IkJlbGluZGEiLCJlbWFpbCI6ImJlbGluZGFAZ21haWwuY29tIiwicm9sZXMiOiJ1c2VyIiwiaXNSZXNldCI6MCwiaWF0IjoxNjg3MzUxNTExLCJleHAiOjE2ODc1MjQzMTF9.r7JqrMr8RkkDB8RxZIVeWvPfpjIFsQqDNu5YHrMR304
+
 
 {
-  "title": "it works but why",
+  "title": "weweewewewe",
   "body": "hey i need assistance",
-  "TAGS":[{"tagId":1,"tagName":"Java"}]
+  "TAGS":[{"tagId":2,"tagName":"HTML"}]
 }
 
 

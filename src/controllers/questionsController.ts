@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { v4 as uid } from 'uuid';
 import { DatabaseHelper } from '../DatabaseHelpers';
-import { DecodedData, questionsExtendedRequest } from '../interfaces';
+import { DecodedData, questions, questionsExtendedRequest } from '../interfaces';
 
 
 //add a question
@@ -87,13 +87,22 @@ export const getQuestion = async (req:questionsExtendedRequest , res: Response) 
 export const updateQuestion = async (req: questionsExtendedRequest, res: Response) => {
   try {
     if (req.info && req.info.roles === 'user') {
+
     const {  questionId,userId} = req.params;
     const {  title, body ,TAGS } = req.body;
-    await DatabaseHelper.exec('updateQuestion', { questionId,title, body });
+    const result = await DatabaseHelper.exec(
+      'getOnequestions',
+      { questionsId: questionId } 
+    );
+    const question:questions = result.recordset[0];
+    if (!question ||userId != question.userId) {
+      res.status(404).json({ error: 'Question not found' });
+    }else{
+    await DatabaseHelper.exec('updateQuestion', { userId,questionId,title, body });
     TAGS.forEach(async(tag:{tagId:string;}) => {
       await DatabaseHelper.exec('updatequetiontags',{tagId:tag.tagId, questionsId:questionId})
     });
-    res.status(200).json({ message: 'Question updated successfully' });
+    res.status(200).json({ message: 'Question updated successfully' })};
   } else {
     return res.status(403).json({ message: "Unauthorized access" });
   }

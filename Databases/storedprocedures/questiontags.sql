@@ -56,6 +56,7 @@ END;
 --updateQuestion
 CREATE OR ALTER PROCEDURE updateQuestion
 (
+  @userId VARCHAR(255),
   @questionId VARCHAR(255),
   @title VARCHAR(255),
   @body TEXT
@@ -65,7 +66,7 @@ BEGIN
   UPDATE QUESTIONS
   SET title = @title,
       body = @body
-  WHERE questionsId = @questionId;
+  WHERE questionsId = @questionId AND userId=@userId
 END;
 
 --updatequetiontags
