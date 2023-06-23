@@ -9,7 +9,7 @@ export const addQuestion = async (req: questionsExtendedRequest, res: Response) 
     try {
       if (req.info && req.info.roles === 'user') {
       const { title, body , TAGS} = req.body;
-      const { userId } = req.params;
+      const  userId  = req.info?.userId as string;
       const questionId = uid();
       await DatabaseHelper.exec('addQuestion', { questionsId: questionId, userId, title, body });
 
@@ -30,7 +30,7 @@ export const addQuestion = async (req: questionsExtendedRequest, res: Response) 
 export const getQuestions = async (req: questionsExtendedRequest, res: Response) => {
   try {
    
-    const result = await DatabaseHelper.exec('getAllquestions');
+    const result = await DatabaseHelper.exec('getAllquestions', {pageNumber:1});
     const questions = result.recordset;
     res.status(200).json(questions);
   } catch (error) {
@@ -88,7 +88,8 @@ export const updateQuestion = async (req: questionsExtendedRequest, res: Respons
   try {
     if (req.info && req.info.roles === 'user') {
 
-    const {  questionId,userId} = req.params;
+    const {  questionId} = req.params;
+    const  userId  = req.info?.userId as string;
     const {  title, body ,TAGS } = req.body;
     const result = await DatabaseHelper.exec(
       'getOnequestions',

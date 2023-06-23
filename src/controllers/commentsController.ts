@@ -5,7 +5,8 @@ import { DecodedData, commentsExtendedRequest } from '../interfaces';
 export const addComment = async (req: commentsExtendedRequest, res: Response) => {
     try {
       const { body } = req.body;
-      const {answerid, userId ,questionsId, } = req.params;
+      const {answerid,questionsId, } = req.params;
+      const  userId  = req.info?.userId as string;
       const commentId = uuid(); 
     
       (await DatabaseHelper.exec('addComment', {

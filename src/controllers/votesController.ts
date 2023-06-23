@@ -7,7 +7,8 @@ import {DatabaseHelper} from  '../DatabaseHelpers';
 export const upVote= async (req: votesExtendedRequest, res: Response) => {
 
     try {
-        const {answerId, userId  } = req.params;
+        const {answerId } = req.params;
+        const  userId  = req.info?.userId as string;
         const voteId = uid(); 
       
         (await DatabaseHelper.exec('Upvoting', {
@@ -27,7 +28,8 @@ export const upVote= async (req: votesExtendedRequest, res: Response) => {
     export const downVote= async (req: votesExtendedRequest, res: Response) => {
 
         try {
-            const {answerId, userId  } = req.params;
+            const {answerId } = req.params;
+            const  userId  = req.info?.userId as string;
             const voteId = uid(); 
           
             (await DatabaseHelper.exec('downvote', {

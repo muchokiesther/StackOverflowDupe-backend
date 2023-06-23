@@ -3,8 +3,8 @@ import { downVote, upVote } from "../controllers/votesController";
 import { verifyToken } from "../Middlewares/creationtoken";
 
 const votesRoutes = Router()
-votesRoutes.post('/upvote/:userId/:answerId',verifyToken,upVote)
+votesRoutes.post('/upvote/:answerId',verifyToken,upVote)
 
-votesRoutes.post('/downvote/:userId/:answerId',verifyToken,downVote)
+votesRoutes.post('/downvote/:answerId',verifyToken,downVote)
 
 export default  votesRoutes

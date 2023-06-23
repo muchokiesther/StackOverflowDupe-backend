@@ -10,13 +10,13 @@ import { response } from 'express'
 
 
 describe('User test', ()=>{
-    it.skip ('Should register a user', ()=>{
+    it .skip('Should register a user', ()=>{
         return request(app).post('/users')
         .expect('Content-Type', /json/)
        .expect(201)
        .send({
-        "userName":"joymk",
-        "email":"maryjk@gmail.com",
+        "userName":"sam kathanga",
+        "email":"kathanga13@gmail.com",
         "password":"Wamuyu@2023"
     })
         .then((response:request.Response)=>{
@@ -331,8 +331,8 @@ it('Should get all questions',()=>{
     
 })
 
-it('Should get one question by questionId ',()=>{
-    return request(app).get('/questions/3b9413c3-2830-4b72-9142-616f5bb88203')
+it('Should get one question by questionsId ',()=>{
+    return request(app).get('/questions/f3514b14-a7c4-41f4-8867-aa389246b694')
     .expect(200)
     .expect("Content-Type", /json/)
     .set('token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1NWIwYzc5Ni1iMzNlLTQ1ZDgtYmRhMy03MmMyNjNmYzg5NDciLCJ1c2VyTmFtZSI6IlNvbnlhIiwiZW1haWwiOiJTb255YUBnbWFpbC5jb20iLCJyb2xlcyI6InVzZXIiLCJpc1Jlc2V0IjowLCJpYXQiOjE2ODczNDc4OTQsImV4cCI6MTY4NzUyMDY5NH0.NLsIbMoNjU7ER8oYHcz-s1EaYlF6nL-D_guaBoEwnwQ')
@@ -371,7 +371,7 @@ it('Should not get  question by wrong questionId ',()=>{
 })
 
 it("Should allow user to update posted question",()=>{
-    return request(app).put('/questions/e5ea9859-ebde-4570-a68c-73e45b2099cc/3b9413c3-2830-4b72-9142-616f5bb88203')
+    return request(app).put('/questions/d84acfe2-c9a8-400c-8c6a-ef537c0b7be9/f3514b14-a7c4-41f4-8867-aa389246b694')
     .expect(200)
     .expect("Content-Type", /json/)
     .set('token','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1NWIwYzc5Ni1iMzNlLTQ1ZDgtYmRhMy03MmMyNjNmYzg5NDciLCJ1c2VyTmFtZSI6IlNvbnlhIiwiZW1haWwiOiJTb255YUBnbWFpbC5jb20iLCJyb2xlcyI6InVzZXIiLCJpc1Jlc2V0IjowLCJpYXQiOjE2ODczNDc4OTQsImV4cCI6MTY4NzUyMDY5NH0.NLsIbMoNjU7ER8oYHcz-s1EaYlF6nL-D_guaBoEwnwQ')
@@ -411,7 +411,7 @@ it("Should not  allow user to update posted question when given wrong userID",()
 })
 
 it.skip('Should delete a Question', ()=>{
-    return request(app).delete('/questions/e5ea9859-ebde-4570-a68c-73e45b2099cc/24f8dd4f-f267-4eda-9c24-7b73a1921659')
+    return request(app).delete('/questions/e5ea9859-ebde-4570-a68c-73e45b2099cc/24f8dd4f-f267-4eda-9c24-7b73a1921659') 
     .expect(200)
     .expect("Content-Type", /json/)
     .set('token','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI5Yzg2N2ZiZC1hNjk3LTRjYTItODA3NS1kYzI5YzQ2ZGY1MWUiLCJ1c2VyTmFtZSI6Im11Y2hva2llc3RoZXIiLCJlbWFpbCI6Im11Y2hva2lAZ21haWwuY29tIiwicm9sZXMiOiJhZG1pbiIsImlzUmVzZXQiOjAsImlhdCI6MTY4NzM4MDczMCwiZXhwIjoxNjg3NTUzNTMwfQ.xx1YZ15YqsIgwl57dvltNRAeXAYX6BNpx0Z_wYzg8ac')

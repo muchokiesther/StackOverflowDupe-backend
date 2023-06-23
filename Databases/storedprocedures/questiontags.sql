@@ -28,14 +28,18 @@ BEGIN
 END;
 --getAllquestions
 CREATE OR ALTER PROCEDURE getAllquestions
-
+(@pageNumber INT )
 AS
 BEGIN
+DECLARE @pageSize INT = 15
   SELECT Q.questionsId, Q.title, Q.body, T.tagId, T.tagName
   FROM QUESTIONS Q
   INNER JOIN QUESTIONTAGS QT ON Q.questionsId = QT.questionsId
   INNER JOIN TAGS T ON QT.tagId = T.tagId 
   WHERE Q.isDeleted=0
+  ORDER BY Q.questionsId 
+  OFFSET (@pageNumber - 1) * @pageSize ROWS 
+  FETCH NEXT @pageSize ROWS ONLY 
 END;
 
 
@@ -74,6 +78,7 @@ CREATE OR ALTER PROCEDURE updatequetiontags(@tagId VARCHAR(255) , @questionsId V
 AS
 BEGIN
 DELETE  FROM QUESTIONTAGS  
+WHERE questionsId=@questionsId
 INSERT INTO QUESTIONTAGS (tagId,questionsId) 
  VALUES(@tagId, @questionsId)
 END

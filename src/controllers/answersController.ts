@@ -1,13 +1,15 @@
 import { Request, Response } from 'express';
 import { v4 as uid } from 'uuid';
 import { DatabaseHelper } from '../DatabaseHelpers'
-import { DecodedData, answersExtendedRequest } from '../interfaces';
+import { DecodedData, answersExtendedRequest, questions } from '../interfaces';
+import userRoutes from '../Routes/userRoutes';
 //add comment
 
 export const addAnswer = async (req: answersExtendedRequest, res: Response) => {
     try {
       const { body, } = req.body;
-      const { userId, questionId } = req.params;
+      const  userId  = req.info?.userId as string;
+      const {  questionId } = req.params;
       const answerId = uid();
     (await DatabaseHelper.exec('addAnswer', {
         answerId: answerId,
@@ -26,13 +28,31 @@ export const addAnswer = async (req: answersExtendedRequest, res: Response) => {
   export const setPreferred = async (req: answersExtendedRequest, res: Response) => {
     try {
       const { answerId } = req.params;
+     const userId = req.info?.userId
+      const answerResult = (await DatabaseHelper.exec('getAnswerByAnswerId', { answerId })).recordset;
   
-      (await DatabaseHelper.exec('isPrefferedAnswer', { answerId })).recordset; 
+      if (answerResult.length === 0) {
+        return res.status(404).json({ error: 'Answer not found' });
+      }
+      console.log(answerResult);
+      
   
-      res.status(200).json({ message: 'Answer marked as preferred' });
+      const questionsId = answerResult[0].questionsId;
+  
+      const questionResult:questions = (await DatabaseHelper.exec('getOneQuestions', { questionsId })).recordset[0];
+  
+      if (!questionResult) {
+        return res.status(404).json({ error: 'Question not found' });
+      }
+      if (questionResult.userId === userId){
+        (await DatabaseHelper.exec('isPrefferedAnswer', { answerId })).recordset; 
+  
+        res.status(200).json({ message: 'Answer marked as preferred' });
+      }
+      res.status(500).json({ error: 'NOt your question' });
     } catch (error) {
       console.error('Error marking answer as preferred:', error);
-      res.status(500).json({ error: 'Internal server error' });
+      res.status(500).json({ error: 'Internal erver error' });
     }
   };
 
