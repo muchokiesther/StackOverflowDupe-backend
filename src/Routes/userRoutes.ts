@@ -5,7 +5,7 @@ import { verifyToken } from "../Middlewares/creationtoken";
 const userRoutes = Router()
 
 userRoutes.post('', addUser)
-userRoutes.get('',verifyToken,getAllUsers)
+userRoutes.get('',getAllUsers)
 userRoutes.get('/email/:email',verifyToken,getUsersByEmail)
 userRoutes.get('/:userId',verifyToken,getUsersById)
 

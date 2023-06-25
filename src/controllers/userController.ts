@@ -123,7 +123,7 @@ export const loginUser= async (req:Request, res:Response)=>{
     try {
         const{email,password}= req.body
 
-        let user:User[]= await (await DatabaseHelper.query(`SELECT * FROM Users WHERE email='${email}'`)).recordset
+        let user:User[]= await (await DatabaseHelper.query(`SELECT * FROM Users WHERE email='${email}'AND isDeleted = 0`)).recordset
 
         if(!user[0]){
             return res.status(404).json({message:"User not Found"})

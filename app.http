@@ -4,28 +4,29 @@ Content-Type: application/json
 
 
 {
-    "userName":"Gnzoika",
-    "email":"nzoika@gmail.com",
+    "userName":"abu",
+    "email":"fbw@gmail.com",
     "password":"Wamuyu@2023"
+    
 }
 
 //get all users
 ###
 GET   http://localhost:4000/users
-Content-Type: application/json
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDA3NzA1NS1jZGVmLTRjZWEtYTljNi1hNGY2ZTI5NjRkODEiLCJ1c2VyTmFtZSI6Ikduem9pa2EiLCJlbWFpbCI6Im56b2lrYUBnbWFpbC5jb20iLCJyb2xlcyI6InVzZXIiLCJpc1Jlc2V0IjowLCJpYXQiOjE2ODc1MTkyNjYsImV4cCI6MTY4NzY5MjA2Nn0.5WgHjlGPyi4KJZGJyJYTIh152LXRxtFa4Q9UDR2I4nQ
+
+
 
 // get one user by email
 ###
-GET  http://localhost:4000/users/email/jonathanndambuki16@gmail.com
+GET  http://localhost:4000/users/email/Sonya@gmail.com
 Content-Type: application/json
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI4ODgwYzM5NS1mNWI5LTQzNjMtOWRlZS1kNGRiMzQxOGRhMjUiLCJ1c2VyTmFtZSI6ImdyYXZ5IiwiZW1haWwiOiJncmF2ZXlAZ21haWwuY29tIiwicm9sZXMiOiJ1c2VyIiwiaXNSZXNldCI6MCwiaWF0IjoxNjg3NDE2MjY3LCJleHAiOjE2ODc1ODkwNjd9.4zwEd1g3XtkrWInSrV3kb6TUPxO-NxXusucv4eXcfzI
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDA3NzA1NS1jZGVmLTRjZWEtYTljNi1hNGY2ZTI5NjRkODEiLCJ1c2VyTmFtZSI6Ikduem9pa2EiLCJlbWFpbCI6Im56b2lrYUBnbWFpbC5jb20iLCJyb2xlcyI6InVzZXIiLCJpc1Jlc2V0IjowLCJpYXQiOjE2ODc1MTkyNjYsImV4cCI6MTY4NzY5MjA2Nn0.5WgHjlGPyi4KJZGJyJYTIh152LXRxtFa4Q9UDR2I4nQ
 
 // get user by ID
 ###
-GET   http://localhost:4000/users/12563a
+GET   http://localhost:4000/users/2dbfcdbd-6a17-412f-9ff9-bd6acb64e82d
 Content-Type: application/json
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI4ODgwYzM5NS1mNWI5LTQzNjMtOW         RlZS1kNGRiMzQxOGRhMjUiLCJ1c2VyTmFtZSI6ImdyYXZ5IiwiZW1haWwiOiJncmF2ZXlAZ21haWwuY29tIiwicm9sZXMiOiJ1c2VyIiwiaXNSZXNldCI6MCwiaWF0IjoxNjg3NDE2MjY3LCJleHAiOjE2ODc1ODkwNjd9.4zwEd1g3XtkrWInSrV3kb6TUPxO-NxXusucv4eXcfzI
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDA3NzA1NS1jZGVmLTRjZWEtYTljNi1hNGY2ZTI5NjRkODEiLCJ1c2VyTmFtZSI6Ikduem9pa2EiLCJlbWFpbCI6Im56b2lrYUBnbWFpbC5jb20iLCJyb2xlcyI6InVzZXIiLCJpc1Jlc2V0IjowLCJpYXQiOjE2ODc1MTkyNjYsImV4cCI6MTY4NzY5MjA2Nn0.5WgHjlGPyi4KJZGJyJYTIh152LXRxtFa4Q9UDR2I4nQ
 
 //Update user
 ###
@@ -52,7 +53,7 @@ Content-Type: application/json
 
 {
     
-    "email":"nzoika@gmail.com",
+    "email":"Sonya@gmail.com",
     "password":"Wamuyu@2023"
 
 }
