@@ -18,10 +18,9 @@ GET   http://localhost:4000/users
 
 // get one user by email
 ###
-GET  http://localhost:4000/users/email/Sonya@gmail.com
+GET  http://localhost:4000/users/email/examplethree@gmail.com
 Content-Type: application/json
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDA3NzA1NS1jZGVmLTRjZWEtYTljNi1hNGY2ZTI5NjRkODEiLCJ1c2VyTmFtZSI6Ikduem9pa2EiLCJlbWFpbCI6Im56b2lrYUBnbWFpbC5jb20iLCJyb2xlcyI6InVzZXIiLCJpc1Jlc2V0IjowLCJpYXQiOjE2ODc1MTkyNjYsImV4cCI6MTY4NzY5MjA2Nn0.5WgHjlGPyi4KJZGJyJYTIh152LXRxtFa4Q9UDR2I4nQ
-
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTkwNDE2Yi1hM2QwLTQ4MjQtOWU0NS02YzZiZGYyYmRmODUiLCJ1c2VyTmFtZSI6ImthdHR5IiwiZW1haWwiOiJleGFtcGxldGhyZWVAZ21haWwuY29tIiwicm9sZXMiOiJ1c2VyIiwiaXNSZXNldCI6MCwiaWF0IjoxNjg3Nzg3MTIwLCJleHAiOjE2ODc5NTk5MjB9.ZusFjmCApHAp7DedB84vqp6mhHnJKs2EJD5sTowr1dM
 // get user by ID
 ###
 GET   http://localhost:4000/users/2dbfcdbd-6a17-412f-9ff9-bd6acb64e82d
@@ -30,13 +29,13 @@ token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDA3NzA1NS1jZGVmLTRjZ
 
 //Update user
 ###
-PUT  http://localhost:4000/users/06768a7f-5883-4df0-8a19-2040e9970ab1
+PUT  http://localhost:4000/users
 Content-Type: application/json
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDA3NzA1NS1jZGVmLTRjZWEtYTljNi1hNGY2ZTI5NjRkODEiLCJ1c2VyTmFtZSI6Ikduem9pa2EiLCJlbWFpbCI6Im56b2lrYUBnbWFpbC5jb20iLCJyb2xlcyI6InVzZXIiLCJpc1Jlc2V0IjowLCJpYXQiOjE2ODc1MTkyNjYsImV4cCI6MTY4NzY5MjA2Nn0.5WgHjlGPyi4KJZGJyJYTIh152LXRxtFa4Q9UDR2I4nQ
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTkwNDE2Yi1hM2QwLTQ4MjQtOWU0NS02YzZiZGYyYmRmODUiLCJ1c2VyTmFtZSI6ImthdHR5IiwiZW1haWwiOiJleGFtcGxldGhyZWVAZ21haWwuY29tIiwicm9sZXMiOiJ1c2VyIiwiaXNSZXNldCI6MCwiaWF0IjoxNjg3Nzg3MTIwLCJleHAiOjE2ODc5NTk5MjB9.ZusFjmCApHAp7DedB84vqp6mhHnJKs2EJD5sTowr1dM
 
 {
-    "userName":"esther",
-    "email":"wamy@gmail.com",
+    "userName":"threeofthree",
+    "email":"examplethree@gmail.com",
     "password":"Wamuyu@2023"
 }
 
@@ -53,7 +52,7 @@ Content-Type: application/json
 
 {
     
-    "email":"Sonya@gmail.com",
+    "email":"examplethree@gmail.com",
     "password":"Wamuyu@2023"
 
 }

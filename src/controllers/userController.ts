@@ -76,16 +76,18 @@ export const getUsersById: RequestHandler<{ userId: string }> = async (req, res)
 
 
   //update user
-  export const updateUser = async(req:Request<{userId:string}>,res:Response) =>{
+  export const updateUser = async (req: UserExtendedRequest, res: Response) => {
     try{
-            const {userId} = req.params
+      const  userId  = req.info?.userId as string;
              let user:User[] = await (await DatabaseHelper.exec('getUserById', { userId })).recordset
             if(!user.length){
                 return res.status(404).json({message:"User not found"})
 
             }
+            
             const {userName, email, password} = req.body
-            await DatabaseHelper.exec('updateUser' ,{userId,userName,email,password})
+            let hashedPassword = await bcrypt.hash(password, 10);
+            await DatabaseHelper.exec('updateUser' ,{userId,userName,email,password:hashedPassword})
             
             return res.status(200).json({message:"User updated successfully"})
     }catch(error:any){

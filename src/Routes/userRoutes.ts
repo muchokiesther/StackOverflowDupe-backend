@@ -9,7 +9,7 @@ userRoutes.get('',getAllUsers)
 userRoutes.get('/email/:email',verifyToken,getUsersByEmail)
 userRoutes.get('/:userId',verifyToken,getUsersById)
 
-userRoutes.put('/:userId',verifyToken,updateUser)
+userRoutes.put('',verifyToken,updateUser)
 userRoutes.delete('/:userId',verifyToken, deleteUser)
 userRoutes.post('/login', loginUser)
 
