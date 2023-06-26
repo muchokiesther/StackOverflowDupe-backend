@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { v4 as uid } from 'uuid';
 import { DatabaseHelper } from '../DatabaseHelpers';
-import { DecodedData, questions, questionsExtendedRequest } from '../interfaces';
+import { DecodedData, Tag, questions, questionsExtendedRequest } from '../interfaces';
 
 
 //add a question
@@ -11,10 +11,13 @@ export const addQuestion = async (req: questionsExtendedRequest, res: Response) 
       const { title, body , TAGS} = req.body;
       const  userId  = req.info?.userId as string;
       const questionId = uid();
+     
       await DatabaseHelper.exec('addQuestion', { questionsId: questionId, userId, title, body });
 
-      TAGS.forEach(async(tag:{tagId:string;}) => {
-        await DatabaseHelper.exec('addquestiontag',{tagId:tag.tagId, questionsId:questionId})
+      TAGS.forEach(async(tag) => {
+        await DatabaseHelper.exec('addTag',{tagName:tag})
+       const currentTag:Tag = (await DatabaseHelper.exec('gettagId',{tagName:tag})).recordset[0]
+        await DatabaseHelper.exec('addquestiontag',{tagId:currentTag.tagId, questionsId:questionId})
       });
       res.status(201).json({ message: 'Question added successfully' });
     } else {
@@ -84,36 +87,39 @@ export const getQuestion = async (req:questionsExtendedRequest , res: Response) 
   
   //update a question 
 
-export const updateQuestion = async (req: questionsExtendedRequest, res: Response) => {
-  try {
-    if (req.info && req.info.roles === 'user') {
+  export const updateQuestion = async (req: questionsExtendedRequest, res: Response) => {
+    try {
+      if (req.info && req.info.roles === 'user') {
+        const { questionId } = req.params;
+        const userId = req.info?.userId as string;
+        const { title, body, TAGS } = req.body;
+  
+        const result = await DatabaseHelper.exec('getOneQuestions', { questionsId: questionId });
+        const question: questions = result.recordset[0];
+  
+        if (!question || userId !== question.userId) {
+          return res.status(404).json({ error: 'Question not found' });
+        }
+  
+        await DatabaseHelper.exec('updateQuestion', { userId, questionId, title, body });
 
-    const {  questionId} = req.params;
-    const  userId  = req.info?.userId as string;
-    const {  title, body ,TAGS } = req.body;
-    const result = await DatabaseHelper.exec(
-      'getOnequestions',
-      { questionsId: questionId } 
-
-    );
-    const question:questions = result.recordset[0];
-    if (!question ||userId != question.userId) {
-      console.log(question.userId);
-      
-      res.status(404).json({ error: 'Question not found' });
-    }else{
-    await DatabaseHelper.exec('updateQuestion', { userId,questionId,title, body });
-    TAGS.forEach(async(tag:{tagId:string;}) => {
-      await DatabaseHelper.exec('updatequetiontags',{tagId:tag.tagId, questionsId:questionId})
-    });
-    res.status(200).json({ message: 'Question updated successfully' })};
-  } else {
-    return res.status(403).json({ message: "Unauthorized access" });
-  }
-  } catch (error) {
-    res.status(500).json(error);
-  }
-};
+     
+        TAGS.forEach (async(tag)=> {
+          await DatabaseHelper.exec('addTag', { tagName: tag });
+          const currentTag: Tag = (await DatabaseHelper.exec('gettagId', { tagName: tag })).recordset[0];
+          await DatabaseHelper.exec('updatequetiontags', { tagId: currentTag.tagId, questionsId: questionId });
+        })
+  
+  
+        return res.status(200).json({ message: 'Question updated successfully' });
+      } else {
+        return res.status(403).json({ message: 'Unauthorized access' });
+      }
+    } catch (error) {
+      return res.status(500).json({ error: 'Internal server error' });
+    }
+  };
+  
 
  //delete quetsion
 export const deleteQuestion = async (req: questionsExtendedRequest,  res: Response) => {

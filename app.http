@@ -62,29 +62,30 @@ Content-Type: application/json
 ###
 POST http://localhost:4000/questions
 Content-Type: application/json
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDA3NzA1NS1jZGVmLTRjZWEtYTljNi1hNGY2ZTI5NjRkODEiLCJ1c2VyTmFtZSI6Ikduem9pa2EiLCJlbWFpbCI6Im56b2lrYUBnbWFpbC5jb20iLCJyb2xlcyI6InVzZXIiLCJpc1Jlc2V0IjowLCJpYXQiOjE2ODc1MTkyNjYsImV4cCI6MTY4NzY5MjA2Nn0.5WgHjlGPyi4KJZGJyJYTIh152LXRxtFa4Q9UDR2I4nQ
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTkwNDE2Yi1hM2QwLTQ4MjQtOWU0NS02YzZiZGYyYmRmODUiLCJ1c2VyTmFtZSI6ImthdHR5IiwiZW1haWwiOiJleGFtcGxldGhyZWVAZ21haWwuY29tIiwicm9sZXMiOiJ1c2VyIiwiaXNSZXNldCI6MCwiaWF0IjoxNjg3Nzg3MTIwLCJleHAiOjE2ODc5NTk5MjB9.ZusFjmCApHAp7DedB84vqp6mhHnJKs2EJD5sTowr1dM
 
 {
-  "title": "computer finding out ",
-  "body": "GET BODY",
-  "TAGS":[{"tagId":1,"tagName":"JAVA"}]
+  "title": "EXAMPLE12",
+  "body": "ANSWERS to",
+  "TAGS":["Java", "Javascript"]
 }
+
 
 //get all questions
 ###
 GET http://localhost:4000/questions
 Content-Type:application/json
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDA3NzA1NS1jZGVmLTRjZWEtYTljNi1hNGY2ZTI5NjRkODEiLCJ1c2VyTmFtZSI6Ikduem9pa2EiLCJlbWFpbCI6Im56b2lrYUBnbWFpbC5jb20iLCJyb2xlcyI6InVzZXIiLCJpc1Jlc2V0IjowLCJpYXQiOjE2ODc1MTkyNjYsImV4cCI6MTY4NzY5MjA2Nn0.5WgHjlGPyi4KJZGJyJYTIh152LXRxtFa4Q9UDR2I4nQ
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTkwNDE2Yi1hM2QwLTQ4MjQtOWU0NS02YzZiZGYyYmRmODUiLCJ1c2VyTmFtZSI6ImthdHR5IiwiZW1haWwiOiJleGFtcGxldGhyZWVAZ21haWwuY29tIiwicm9sZXMiOiJ1c2VyIiwiaXNSZXNldCI6MCwiaWF0IjoxNjg3Nzg3MTIwLCJleHAiOjE2ODc5NTk5MjB9.ZusFjmCApHAp7DedB84vqp6mhHnJKs2EJD5sTowr1dM
 
 //get one question by QUESTIONSID
 ###
-GET  http://localhost:4000/questions/abb47137-12d3-4eda-b6fc-d1aec21a37c7
+GET  http://localhost:4000/questions/09d2f1b1-2a31-4c02-9964-080a7ae121bc
 Content-Type:application/json
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkODRhY2ZlMi1jOWE4LTQwMGMtOGM2YS1lZjUzN2MwYjdiZTkiLCJ1c2VyTmFtZSI6IkpvbmF0aGFuIiwiZW1haWwiOiJqb25hdGhhbm5kYW1idWtpMTZAZ21haWwuY29tIiwicm9sZXMiOiJ1c2VyIiwiaXNSZXNldCI6MCwiaWF0IjoxNjg3NDI1OTc2LCJleHAiOjE2ODc1OTg3NzZ9.TIJPKhNug4z93fTl1IAWcH6nBScrN2mQmsUvsqUnlM0
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTkwNDE2Yi1hM2QwLTQ4MjQtOWU0NS02YzZiZGYyYmRmODUiLCJ1c2VyTmFtZSI6ImthdHR5IiwiZW1haWwiOiJleGFtcGxldGhyZWVAZ21haWwuY29tIiwicm9sZXMiOiJ1c2VyIiwiaXNSZXNldCI6MCwiaWF0IjoxNjg3Nzg3MTIwLCJleHAiOjE2ODc5NTk5MjB9.ZusFjmCApHAp7DedB84vqp6mhHnJKs2EJD5sTowr1dM
 
 //get  questions by userid
 ###
-GET  http://localhost:4000/questions/user/06768a7f-5883-4df0-8a19-2040e9970ab1
+GET  http://localhost:4000/questions/user/72c8327c-aa83-4fab-b19e-ee4fc414c5bf
 Content-Type:application/json
 token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkODRhY2ZlMi1jOWE4LTQwMGMtOGM2YS1lZjUzN2MwYjdiZTkiLCJ1c2VyTmFtZSI6IkpvbmF0aGFuIiwiZW1haWwiOiJqb25hdGhhbm5kYW1idWtpMTZAZ21haWwuY29tIiwicm9sZXMiOiJ1c2VyIiwiaXNSZXNldCI6MCwiaWF0IjoxNjg3NDI1OTc2LCJleHAiOjE2ODc1OTg3NzZ9.TIJPKhNug4z93fTl1IAWcH6nBScrN2mQmsUvsqUnlM0
 
@@ -96,15 +97,16 @@ token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI5Yzg2N2ZiZC1hNjk3LTRjY
 
 //Update a question  questionsid
 ###
-PUT  http://localhost:4000/questions/abb47137-12d3-4eda-b6fc-d1aec21a37c7
+PUT  http://localhost:4000/questions/09d2f1b1-2a31-4c02-9964-080a7ae121bc
 Content-Type: application/json
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkODRhY2ZlMi1jOWE4LTQwMGMtOGM2YS1lZjUzN2MwYjdiZTkiLCJ1c2VyTmFtZSI6IkpvbmF0aGFuIiwiZW1haWwiOiJqb25hdGhhbm5kYW1idWtpMTZAZ21haWwuY29tIiwicm9sZXMiOiJ1c2VyIiwiaXNSZXNldCI6MCwiaWF0IjoxNjg3NDQxODIxLCJleHAiOjE2ODc2MTQ2MjF9.UBZeE271XqsaJGKXbMeepskbfW5B_XLOtuq3kC3KEB4
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTkwNDE2Yi1hM2QwLTQ4MjQtOWU0NS02YzZiZGYyYmRmODUiLCJ1c2VyTmFtZSI6ImthdHR5IiwiZW1haWwiOiJleGFtcGxldGhyZWVAZ21haWwuY29tIiwicm9sZXMiOiJ1c2VyIiwiaXNSZXNldCI6MCwiaWF0IjoxNjg3Nzg3MTIwLCJleHAiOjE2ODc5NTk5MjB9.ZusFjmCApHAp7DedB84vqp6mhHnJKs2EJD5sTowr1dM
 
 
 {
-  "title": "Science  computers mashup",
-  "body": "HHHHHHHHJHJJ but good too",
-  "TAGS":[{"tagId":2,"tagName":"HTML"}]
+  "title": "Read the instructions",
+  "body": "how to",
+  "TAGS":["HTML", "JavaScript"]
+
 }
 
 
