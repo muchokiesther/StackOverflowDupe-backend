@@ -16,8 +16,14 @@ export const addQuestion = async (req: questionsExtendedRequest, res: Response) 
 
       TAGS.forEach(async(tag) => {
         await DatabaseHelper.exec('addTag',{tagName:tag})
+
        const currentTag:Tag = (await DatabaseHelper.exec('gettagId',{tagName:tag})).recordset[0]
+       if(currentTag){
         await DatabaseHelper.exec('addquestiontag',{tagId:currentTag.tagId, questionsId:questionId})
+       }else{
+        return res.status(404).json({ message: "NOT FOUND" });
+       }
+       
       });
       res.status(201).json({ message: 'Question added successfully' });
     } else {

@@ -52,8 +52,8 @@ Content-Type: application/json
 
 {
     
-    "email":"examplethree@gmail.com",
-    "password":"Wamuyu@2023"
+    "email":"muchoki@gmail.com",
+    "password":"Wamuyu@20"
 
 }
 
@@ -65,8 +65,8 @@ Content-Type: application/json
 token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTkwNDE2Yi1hM2QwLTQ4MjQtOWU0NS02YzZiZGYyYmRmODUiLCJ1c2VyTmFtZSI6ImthdHR5IiwiZW1haWwiOiJleGFtcGxldGhyZWVAZ21haWwuY29tIiwicm9sZXMiOiJ1c2VyIiwiaXNSZXNldCI6MCwiaWF0IjoxNjg3Nzg3MTIwLCJleHAiOjE2ODc5NTk5MjB9.ZusFjmCApHAp7DedB84vqp6mhHnJKs2EJD5sTowr1dM
 
 {
-  "title": "EXAMPLE12",
-  "body": "ANSWERS to",
+  "title": "EXTRA WORK",
+  "body": "WORK ANS",
   "TAGS":["Java", "Javascript"]
 }
 
@@ -79,15 +79,15 @@ token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTkwNDE2Yi1hM2QwLTQ4M
 
 //get one question by QUESTIONSID
 ###
-GET  http://localhost:4000/questions/09d2f1b1-2a31-4c02-9964-080a7ae121bc
+GET  http://localhost:4000/questions/6590416b-a3d0-4824-9e45-6c6bdf2bdf85
 Content-Type:application/json
 token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTkwNDE2Yi1hM2QwLTQ4MjQtOWU0NS02YzZiZGYyYmRmODUiLCJ1c2VyTmFtZSI6ImthdHR5IiwiZW1haWwiOiJleGFtcGxldGhyZWVAZ21haWwuY29tIiwicm9sZXMiOiJ1c2VyIiwiaXNSZXNldCI6MCwiaWF0IjoxNjg3Nzg3MTIwLCJleHAiOjE2ODc5NTk5MjB9.ZusFjmCApHAp7DedB84vqp6mhHnJKs2EJD5sTowr1dM
 
 //get  questions by userid
 ###
-GET  http://localhost:4000/questions/user/72c8327c-aa83-4fab-b19e-ee4fc414c5bf
+GET  http://localhost:4000/questions/user/6590416b-a3d0-4824-9e45-6c6bdf2bdf85
 Content-Type:application/json
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkODRhY2ZlMi1jOWE4LTQwMGMtOGM2YS1lZjUzN2MwYjdiZTkiLCJ1c2VyTmFtZSI6IkpvbmF0aGFuIiwiZW1haWwiOiJqb25hdGhhbm5kYW1idWtpMTZAZ21haWwuY29tIiwicm9sZXMiOiJ1c2VyIiwiaXNSZXNldCI6MCwiaWF0IjoxNjg3NDI1OTc2LCJleHAiOjE2ODc1OTg3NzZ9.TIJPKhNug4z93fTl1IAWcH6nBScrN2mQmsUvsqUnlM0
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTkwNDE2Yi1hM2QwLTQ4MjQtOWU0NS02YzZiZGYyYmRmODUiLCJ1c2VyTmFtZSI6ImthdHR5IiwiZW1haWwiOiJleGFtcGxldGhyZWVAZ21haWwuY29tIiwicm9sZXMiOiJ1c2VyIiwiaXNSZXNldCI6MCwiaWF0IjoxNjg3Nzg3MTIwLCJleHAiOjE2ODc5NTk5MjB9.ZusFjmCApHAp7DedB84vqp6mhHnJKs2EJD5sTowr1dM
 
 // delete question by questionsId
 ###
@@ -112,30 +112,30 @@ token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTkwNDE2Yi1hM2QwLTQ4M
 
 //add answer
 ###
-POST http://localhost:4000/answer/5b277088-4c6a-4b8e-8031-fc2d61add197
+POST http://localhost:4000/answer/252fd195-8212-4cde-841e-777a49efe47d
 Content-Type: application/json
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkODRhY2ZlMi1jOWE4LTQwMGMtOGM2YS1lZjUzN2MwYjdiZTkiLCJ1c2VyTmFtZSI6IkpvbmF0aGFuIiwiZW1haWwiOiJqb25hdGhhbm5kYW1idWtpMTZAZ21haWwuY29tIiwicm9sZXMiOiJ1c2VyIiwiaXNSZXNldCI6MCwiaWF0IjoxNjg3NDQxODIxLCJleHAiOjE2ODc2MTQ2MjF9.UBZeE271XqsaJGKXbMeepskbfW5B_XLOtuq3kC3KEB4
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTkwNDE2Yi1hM2QwLTQ4MjQtOWU0NS02YzZiZGYyYmRmODUiLCJ1c2VyTmFtZSI6ImthdHR5IiwiZW1haWwiOiJleGFtcGxldGhyZWVAZ21haWwuY29tIiwicm9sZXMiOiJ1c2VyIiwiaXNSZXNldCI6MCwiaWF0IjoxNjg3Nzg3MTIwLCJleHAiOjE2ODc5NTk5MjB9.ZusFjmCApHAp7DedB84vqp6mhHnJKs2EJD5sTowr1dM
 
 {
- "body":"SEDINGG "
+ "body":"lets work together to figure it out"
 }
 
-//set preferred
+//set preferred by answerId
 ###
-POST  http://localhost:4000/answer/prefer/f6d65dfe-e7f3-4909-be42-07a3f0525a02
+POST  http://localhost:4000/answer/prefer/93599526-7eee-4446-b467-2138f856ee33
 Content-Type: application/json
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDA3NzA1NS1jZGVmLTRjZWEtYTljNi1hNGY2ZTI5NjRkODEiLCJ1c2VyTmFtZSI6Ikduem9pa2EiLCJlbWFpbCI6Im56b2lrYUBnbWFpbC5jb20iLCJyb2xlcyI6InVzZXIiLCJpc1Jlc2V0IjowLCJpYXQiOjE2ODc1MTkyNjYsImV4cCI6MTY4NzY5MjA2Nn0.5WgHjlGPyi4KJZGJyJYTIh152LXRxtFa4Q9UDR2I4nQ
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI5Yzg2N2ZiZC1hNjk3LTRjYTItODA3NS1kYzI5YzQ2ZGY1MWUiLCJ1c2VyTmFtZSI6Im11Y2hva2llc3RoZXIiLCJlbWFpbCI6Im11Y2hva2lAZ21haWwuY29tIiwicm9sZXMiOiJhZG1pbiIsImlzUmVzZXQiOjAsImlhdCI6MTY4Nzg5OTc1OSwiZXhwIjoxNjg4MDcyNTU5fQ.k4rVsZAPnZNV1O_OXR-HVK6hcw0zQMr8dzx8uPtC8_g
 
-{
 
-}
+
 
 
 //get answers for a  question by using questionId
 ###
-GET  http://localhost:4000/answer/5b277088-4c6a-4b8e-8031-fc2d61add197
+GET  http://localhost:4000/answer/252fd195-8212-4cde-841e-777a49efe47d
 Content-Type: application/json
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJkODRhY2ZlMi1jOWE4LTQwMGMtOGM2YS1lZjUzN2MwYjdiZTkiLCJ1c2VyTmFtZSI6IkpvbmF0aGFuIiwiZW1haWwiOiJqb25hdGhhbm5kYW1idWtpMTZAZ21haWwuY29tIiwicm9sZXMiOiJ1c2VyIiwiaXNSZXNldCI6MCwiaWF0IjoxNjg3NDI1OTc2LCJleHAiOjE2ODc1OTg3NzZ9.TIJPKhNug4z93fTl1IAWcH6nBScrN2mQmsUvsqUnlM0
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTkwNDE2Yi1hM2QwLTQ4MjQtOWU0NS02YzZiZGYyYmRmODUiLCJ1c2VyTmFtZSI6ImthdHR5IiwiZW1haWwiOiJleGFtcGxldGhyZWVAZ21haWwuY29tIiwicm9sZXMiOiJ1c2VyIiwiaXNSZXNldCI6MCwiaWF0IjoxNjg3Nzg3MTIwLCJleHAiOjE2ODc5NTk5MjB9.ZusFjmCApHAp7DedB84vqp6mhHnJKs2EJD5sTowr1dM
+
 
 ###
 //get one answer posted by userid
@@ -163,7 +163,7 @@ token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1NWIwYzc5Ni1iMzNlLTQ1Z
 
 //add an upvote userId/answerId
 ###
-POST  http://localhost:4000/votes/upvote/1761422a-a61b-414a-9b9e-61f91188d280
+POST  http://localhost:4000/votes/upvote/93599526-7eee-4446-b467-2138f856ee33
 Content-Type: application/json
 token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1NWIwYzc5Ni1iMzNlLTQ1ZDgtYmRhMy03MmMyNjNmYzg5NDciLCJ1c2VyTmFtZSI6IlNvbnlhIiwiZW1haWwiOiJTb255YUBnbWFpbC5jb20iLCJyb2xlcyI6InVzZXIiLCJpc1Jlc2V0IjowLCJpYXQiOjE2ODcyOTEwMzJ9.M3R0PqkiwwGsx40acWa-AImz3P1HZDzVbxT7RATBuTo
 
@@ -174,7 +174,7 @@ token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1NWIwYzc5Ni1iMzNlLTQ1Z
 // add a downvote answerId
 
 ###
-POST  http://localhost:4000/votes/downvote/1761422a-a61b-414a-9b9e-61f91188d280
+POST  http://localhost:4000/votes/downvote/93599526-7eee-4446-b467-2138f856ee33
 Content-Type: application/json
 token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1NWIwYzc5Ni1iMzNlLTQ1ZDgtYmRhMy03MmMyNjNmYzg5NDciLCJ1c2VyTmFtZSI6IlNvbnlhIiwiZW1haWwiOiJTb255YUBnbWFpbC5jb20iLCJyb2xlcyI6InVzZXIiLCJpc1Jlc2V0IjowLCJpYXQiOjE2ODcyOTEwMzJ9.M3R0PqkiwwGsx40acWa-AImz3P1HZDzVbxT7RATBuTo
 

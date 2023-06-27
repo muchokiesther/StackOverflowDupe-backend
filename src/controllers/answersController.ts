@@ -34,7 +34,7 @@ export const addAnswer = async (req: answersExtendedRequest, res: Response) => {
       if (answerResult.length === 0) {
         return res.status(404).json({ error: 'Answer not found' });
       }
-      console.log(answerResult);
+      //console.log(answerResult);
       
   
       const questionsId = answerResult[0].questionsId;
@@ -48,8 +48,8 @@ export const addAnswer = async (req: answersExtendedRequest, res: Response) => {
         (await DatabaseHelper.exec('isPrefferedAnswer', { answerId })).recordset; 
   
         res.status(200).json({ message: 'Answer marked as preferred' });
-      }
-      res.status(500).json({ error: 'NOt your question' });
+      }else{ res.status(404).json({ error: 'Not your question' });}
+      
     } catch (error) {
       console.error('Error marking answer as preferred:', error);
       res.status(500).json({ error: 'Internal erver error' });
