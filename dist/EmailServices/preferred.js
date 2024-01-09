@@ -26,12 +26,13 @@ const sendPreferredEmail = () => __awaiter(void 0, void 0, void 0, function* () 
     console.log(users);
     // looping through and send an email
     for (let user of users) {
-        ejs_1.default.renderFile('dist/Template/preferred.ejs', { username: user.userName, question: user.question_title }, (err, html) => __awaiter(void 0, void 0, void 0, function* () {
+        console.log(users);
+        ejs_1.default.renderFile('./preferred.ejs', { username: user.userName, question_title: user.question_title }, (err, html) => __awaiter(void 0, void 0, void 0, function* () {
             if (err) {
                 console.log(err);
                 return;
             }
-            //send email
+            //  send email
             try {
                 let messageOptions = {
                     from: 'muchokiesther8@gmail.com',

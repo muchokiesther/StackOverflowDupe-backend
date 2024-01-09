@@ -20,10 +20,12 @@ export const sendWelcomeEmail = async() => {
     const pool = await mssql.connect(sqlConfig)
     const users: User[] = (await (await pool.request()).query('SELECT * FROM USERS WHERE emailSent=0')).recordset
     console.log(users);
-
+   
+    
     // looping through and send an email
     for (let user of users) {
         ejs.renderFile('dist/Templates/Welcome.ejs', {name:user. userName}, async(err, html) => {
+            console.log(html)
           //send email
                 try {
                 
@@ -32,6 +34,7 @@ export const sendWelcomeEmail = async() => {
                     to: user.email,
                     subject: "Welcome Email",
                     html
+                    
                 }
                  await sendMail(messageOptions)   
                  //update the database email was sent

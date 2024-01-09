@@ -24,12 +24,16 @@ export const sendPreferredEmail = async() => {
 
     // looping through and send an email
     for (let user of users) {
-        ejs.renderFile('dist/Template/preferred.ejs', {username:user.userName, question:user.question_title}, async(err, html) => {
+        console.log(users);
+        ejs.renderFile('./preferred.ejs', {username:user.userName, question_title:user.question_title}, async(err, html) => {
+            
            if (err){
             console.log(err)
             return
            }
-            //send email
+          
+           
+          //  send email
                 try {
                 
                 let messageOptions = {

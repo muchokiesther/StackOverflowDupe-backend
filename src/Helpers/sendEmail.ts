@@ -6,13 +6,15 @@ dotenv.config({path:path.resolve(__dirname, '../../.env')})
 
 
 let configurationOptions = {
+    pool:true,
     host: "smtp.gmail.com",
     service:'gmail' ,
     port: 587,
     auth: {
         user: 'muchokiesther8@gmail.com',
-        pass: 'glfqriryzcjlfwci',
+        pass: 'covyhchrusvfsyha',
     }
+
 }
 function createTransporter (configOpts:any){
     return nodemailer.createTransport(configOpts)

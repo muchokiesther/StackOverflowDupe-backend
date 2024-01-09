@@ -27,6 +27,7 @@ const sendWelcomeEmail = () => __awaiter(void 0, void 0, void 0, function* () {
     // looping through and send an email
     for (let user of users) {
         ejs_1.default.renderFile('dist/Templates/Welcome.ejs', { name: user.userName }, (err, html) => __awaiter(void 0, void 0, void 0, function* () {
+            console.log(html);
             //send email
             try {
                 let messageOptions = {

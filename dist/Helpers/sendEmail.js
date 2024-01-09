@@ -18,12 +18,13 @@ const dotenv_1 = __importDefault(require("dotenv"));
 const path_1 = __importDefault(require("path"));
 dotenv_1.default.config({ path: path_1.default.resolve(__dirname, '../../.env') });
 let configurationOptions = {
+    pool: true,
     host: "smtp.gmail.com",
     service: 'gmail',
     port: 587,
     auth: {
         user: 'muchokiesther8@gmail.com',
-        pass: 'glfqriryzcjlfwci',
+        pass: 'covyhchrusvfsyha',
     }
 };
 function createTransporter(configOpts) {
