@@ -73,14 +73,14 @@ export const getQuestion = async (req:questionsExtendedRequest , res: Response) 
   export const getQuestionByUserid = async (req: questionsExtendedRequest , res: Response) => {
     try {
   
-      const { userId } = req.params;
+      const  userId  = req.info?.userId as string;
       const result = await DatabaseHelper.exec(
         'getquestionsByuserid',
         { userId: userId } 
       );
       const question = result.recordset;
       if (!question) {
-        res.status(404).json({ error: 'User Questions not found' });
+        res.status(404).json({ error: 'User Questions not foundddddd' });
       } else {
         res.status(200).json(question);
       }
@@ -130,7 +130,7 @@ export const getQuestion = async (req:questionsExtendedRequest , res: Response) 
  //delete quetsion
 export const deleteQuestion = async (req: questionsExtendedRequest,  res: Response) => {
   try {
-    if (req.info && req.info.roles === 'admin') {
+    if (req.info && req.info.roles === 'admin'||req.info && req.info.roles === 'user' ) {
     const { questionId } = req.params;
     const result = await DatabaseHelper.exec(
       'getOnequestions',

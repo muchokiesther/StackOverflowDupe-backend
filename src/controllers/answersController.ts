@@ -7,7 +7,7 @@ import userRoutes from '../Routes/userRoutes';
 
 export const addAnswer = async (req: answersExtendedRequest, res: Response) => {
     try {
-      const { body, } = req.body;
+      const { body } = req.body;
       const  userId  = req.info?.userId as string;
       const {  questionId } = req.params;
       const answerId = uid();

@@ -4,8 +4,8 @@ Content-Type: application/json
 
 
 {
-    "userName":"abu",
-    "email":"fbw@gmail.com",
+    "userName":"eggzample",
+    "email":"egg@gmail.com",
     "password":"Wamuyu@2023"
     
 }
@@ -18,9 +18,9 @@ GET   http://localhost:4000/users
 
 // get one user by email
 ###
-GET  http://localhost:4000/users/email/examplethree@gmail.com
+GET  http://localhost:4000/users/email/test@gmail.com
 Content-Type: application/json
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTkwNDE2Yi1hM2QwLTQ4MjQtOWU0NS02YzZiZGYyYmRmODUiLCJ1c2VyTmFtZSI6ImthdHR5IiwiZW1haWwiOiJleGFtcGxldGhyZWVAZ21haWwuY29tIiwicm9sZXMiOiJ1c2VyIiwiaXNSZXNldCI6MCwiaWF0IjoxNjg3Nzg3MTIwLCJleHAiOjE2ODc5NTk5MjB9.ZusFjmCApHAp7DedB84vqp6mhHnJKs2EJD5sTowr1dM
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTkwNDE2Yi1hM2QwLTQ4MjQtOWU0NS02YzZiZGYyYmRmODUiLCJ1c2VyTmFtZSI6InRocmVlb2Z0aHJlZSIsImVtYWlsIjoiZXhhbXBsZXRocmVlQGdtYWlsLmNvbSIsInJvbGVzIjoidXNlciIsImlzUmVzZXQiOjAsImlhdCI6MTY4Nzk4NDQ0NSwiZXhwIjoxNjg4MTU3MjQ1fQ.kcE1EA4-qRITpciUK13UBIbWQ_0KOhtjLLAgX_97NLw
 // get user by ID
 ###
 GET   http://localhost:4000/users/2dbfcdbd-6a17-412f-9ff9-bd6acb64e82d
@@ -52,8 +52,8 @@ Content-Type: application/json
 
 {
     
-    "email":"muchoki@gmail.com",
-    "password":"Wamuyu@20"
+    "email":"grace@gmail.com",
+    "password":"Wamuyu@2023"
 
 }
 
@@ -62,7 +62,7 @@ Content-Type: application/json
 ###
 POST http://localhost:4000/questions
 Content-Type: application/json
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTkwNDE2Yi1hM2QwLTQ4MjQtOWU0NS02YzZiZGYyYmRmODUiLCJ1c2VyTmFtZSI6ImthdHR5IiwiZW1haWwiOiJleGFtcGxldGhyZWVAZ21haWwuY29tIiwicm9sZXMiOiJ1c2VyIiwiaXNSZXNldCI6MCwiaWF0IjoxNjg3Nzg3MTIwLCJleHAiOjE2ODc5NTk5MjB9.ZusFjmCApHAp7DedB84vqp6mhHnJKs2EJD5sTowr1dM
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJmZjdiMWRiOC1kYmI3LTQ5MDUtYmY1NS1kZjA3NGI5NmU3NTciLCJ1c2VyTmFtZSI6IkdyYWNpZV9rayIsImVtYWlsIjoiZ3JhY2VAZ21haWwuY29tIiwicm9sZXMiOiJ1c2VyIiwiaXNSZXNldCI6MCwiaWF0IjoxNjg4MDM2NjU4LCJleHAiOjE2ODgyMDk0NTh9.Q6eVuosHqBVqE40tIM1khWwo8Bi_TpYWobre6RI-ub8
 
 {
   "title": "EXTRA WORK",
@@ -75,19 +75,19 @@ token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTkwNDE2Yi1hM2QwLTQ4M
 ###
 GET http://localhost:4000/questions
 Content-Type:application/json
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTkwNDE2Yi1hM2QwLTQ4MjQtOWU0NS02YzZiZGYyYmRmODUiLCJ1c2VyTmFtZSI6ImthdHR5IiwiZW1haWwiOiJleGFtcGxldGhyZWVAZ21haWwuY29tIiwicm9sZXMiOiJ1c2VyIiwiaXNSZXNldCI6MCwiaWF0IjoxNjg3Nzg3MTIwLCJleHAiOjE2ODc5NTk5MjB9.ZusFjmCApHAp7DedB84vqp6mhHnJKs2EJD5sTowr1dM
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJmZjdiMWRiOC1kYmI3LTQ5MDUtYmY1NS1kZjA3NGI5NmU3NTciLCJ1c2VyTmFtZSI6IkdyYWNpZV9rayIsImVtYWlsIjoiZ3JhY2VAZ21haWwuY29tIiwicm9sZXMiOiJ1c2VyIiwiaXNSZXNldCI6MCwiaWF0IjoxNjg4MDM2NjU4LCJleHAiOjE2ODgyMDk0NTh9.Q6eVuosHqBVqE40tIM1khWwo8Bi_TpYWobre6RI-ub8
 
 //get one question by QUESTIONSID
 ###
-GET  http://localhost:4000/questions/6590416b-a3d0-4824-9e45-6c6bdf2bdf85
+GET  http://localhost:4000/questions/50970bc5-b253-455d-8761-0a4bc87ce886
 Content-Type:application/json
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTkwNDE2Yi1hM2QwLTQ4MjQtOWU0NS02YzZiZGYyYmRmODUiLCJ1c2VyTmFtZSI6ImthdHR5IiwiZW1haWwiOiJleGFtcGxldGhyZWVAZ21haWwuY29tIiwicm9sZXMiOiJ1c2VyIiwiaXNSZXNldCI6MCwiaWF0IjoxNjg3Nzg3MTIwLCJleHAiOjE2ODc5NTk5MjB9.ZusFjmCApHAp7DedB84vqp6mhHnJKs2EJD5sTowr1dM
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJmZjdiMWRiOC1kYmI3LTQ5MDUtYmY1NS1kZjA3NGI5NmU3NTciLCJ1c2VyTmFtZSI6IkdyYWNpZV9rayIsImVtYWlsIjoiZ3JhY2VAZ21haWwuY29tIiwicm9sZXMiOiJ1c2VyIiwiaXNSZXNldCI6MCwiaWF0IjoxNjg4MDM2NjU4LCJleHAiOjE2ODgyMDk0NTh9.Q6eVuosHqBVqE40tIM1khWwo8Bi_TpYWobre6RI-ub8
 
-//get  questions by userid
+//get  questions by for a user
 ###
-GET  http://localhost:4000/questions/user/6590416b-a3d0-4824-9e45-6c6bdf2bdf85
+GET  http://localhost:4000/questions/user/question
 Content-Type:application/json
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTkwNDE2Yi1hM2QwLTQ4MjQtOWU0NS02YzZiZGYyYmRmODUiLCJ1c2VyTmFtZSI6ImthdHR5IiwiZW1haWwiOiJleGFtcGxldGhyZWVAZ21haWwuY29tIiwicm9sZXMiOiJ1c2VyIiwiaXNSZXNldCI6MCwiaWF0IjoxNjg3Nzg3MTIwLCJleHAiOjE2ODc5NTk5MjB9.ZusFjmCApHAp7DedB84vqp6mhHnJKs2EJD5sTowr1dM
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJmZjdiMWRiOC1kYmI3LTQ5MDUtYmY1NS1kZjA3NGI5NmU3NTciLCJ1c2VyTmFtZSI6IkdyYWNpZV9rayIsImVtYWlsIjoiZ3JhY2VAZ21haWwuY29tIiwicm9sZXMiOiJ1c2VyIiwiaXNSZXNldCI6MCwiaWF0IjoxNjg4MDM2NjU4LCJleHAiOjE2ODgyMDk0NTh9.Q6eVuosHqBVqE40tIM1khWwo8Bi_TpYWobre6RI-ub8
 
 // delete question by questionsId
 ###
@@ -97,27 +97,27 @@ token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI5Yzg2N2ZiZC1hNjk3LTRjY
 
 //Update a question  questionsid
 ###
-PUT  http://localhost:4000/questions/09d2f1b1-2a31-4c02-9964-080a7ae121bc
+PUT  http://localhost:4000/questions/50970bc5-b253-455d-8761-0a4bc87ce886
 Content-Type: application/json
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTkwNDE2Yi1hM2QwLTQ4MjQtOWU0NS02YzZiZGYyYmRmODUiLCJ1c2VyTmFtZSI6ImthdHR5IiwiZW1haWwiOiJleGFtcGxldGhyZWVAZ21haWwuY29tIiwicm9sZXMiOiJ1c2VyIiwiaXNSZXNldCI6MCwiaWF0IjoxNjg3Nzg3MTIwLCJleHAiOjE2ODc5NTk5MjB9.ZusFjmCApHAp7DedB84vqp6mhHnJKs2EJD5sTowr1dM
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJmZjdiMWRiOC1kYmI3LTQ5MDUtYmY1NS1kZjA3NGI5NmU3NTciLCJ1c2VyTmFtZSI6IkdyYWNpZV9rayIsImVtYWlsIjoiZ3JhY2VAZ21haWwuY29tIiwicm9sZXMiOiJ1c2VyIiwiaXNSZXNldCI6MCwiaWF0IjoxNjg4MDM2NjU4LCJleHAiOjE2ODgyMDk0NTh9.Q6eVuosHqBVqE40tIM1khWwo8Bi_TpYWobre6RI-ub8
 
 
 {
   "title": "Read the instructions",
   "body": "how to",
-  "TAGS":["HTML", "JavaScript"]
+  "TAGS":["HTML"]
 
 }
 
 
 //add answer
 ###
-POST http://localhost:4000/answer/252fd195-8212-4cde-841e-777a49efe47d
+POST http://localhost:4000/answer/1c9b84a1-2af4-468d-b250-32cf60e12e4d
 Content-Type: application/json
 token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTkwNDE2Yi1hM2QwLTQ4MjQtOWU0NS02YzZiZGYyYmRmODUiLCJ1c2VyTmFtZSI6ImthdHR5IiwiZW1haWwiOiJleGFtcGxldGhyZWVAZ21haWwuY29tIiwicm9sZXMiOiJ1c2VyIiwiaXNSZXNldCI6MCwiaWF0IjoxNjg3Nzg3MTIwLCJleHAiOjE2ODc5NTk5MjB9.ZusFjmCApHAp7DedB84vqp6mhHnJKs2EJD5sTowr1dM
 
 {
- "body":"lets work together to figure it out"
+ "body":"i need to know why this works like so show more"
 }
 
 //set preferred by answerId
@@ -132,21 +132,21 @@ token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI5Yzg2N2ZiZC1hNjk3LTRjY
 
 //get answers for a  question by using questionId
 ###
-GET  http://localhost:4000/answer/252fd195-8212-4cde-841e-777a49efe47d
+GET  http://localhost:4000/answer/2dd0e9c2-6810-4b49-891c-ad18cac558fd
 Content-Type: application/json
-token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTkwNDE2Yi1hM2QwLTQ4MjQtOWU0NS02YzZiZGYyYmRmODUiLCJ1c2VyTmFtZSI6ImthdHR5IiwiZW1haWwiOiJleGFtcGxldGhyZWVAZ21haWwuY29tIiwicm9sZXMiOiJ1c2VyIiwiaXNSZXNldCI6MCwiaWF0IjoxNjg3Nzg3MTIwLCJleHAiOjE2ODc5NTk5MjB9.ZusFjmCApHAp7DedB84vqp6mhHnJKs2EJD5sTowr1dM
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1NWIwYzc5Ni1iMzNlLTQ1ZDgtYmRhMy03MmMyNjNmYzg5NDciLCJ1c2VyTmFtZSI6IlNvbnlhIiwiZW1haWwiOiJTb255YUBnbWFpbC5jb20iLCJyb2xlcyI6InVzZXIiLCJpc1Jlc2V0IjowLCJpYXQiOjE2ODcyOTEwMzJ9.M3R0PqkiwwGsx40acWa-AImz3P1HZDzVbxT7RATBuTo
 
 
 ###
 //get one answer posted by userid
-GET  http://localhost:4000/answer/useranswer/06768a7f-5883-4df0-8a19-2040e9970ab1
+GET  http://localhost:4000/answer/useranswer/ff7b1db8-dbb7-4905-bf55-df074b96e757
 Content-Type: application/json
 token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1NWIwYzc5Ni1iMzNlLTQ1ZDgtYmRhMy03MmMyNjNmYzg5NDciLCJ1c2VyTmFtZSI6IlNvbnlhIiwiZW1haWwiOiJTb255YUBnbWFpbC5jb20iLCJyb2xlcyI6InVzZXIiLCJpc1Jlc2V0IjowLCJpYXQiOjE2ODcyOTEwMzJ9.M3R0PqkiwwGsx40acWa-AImz3P1HZDzVbxT7RATBuTo
 
 
 //add comment questionsid/answerId
 ###
-POST  http://localhost:4000/comments/81f9149d-4733-412c-9bfb-2646987f3acc/1761422a-a61b-414a-9b9e-61f91188d280
+POST  http://localhost:4000/comments/252fd195-8212-4cde-841e-777a49efe47d/c7945bba-97c9-4484-8555-860c36dc5b0c
 Content-Type: application/json
 token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1NWIwYzc5Ni1iMzNlLTQ1ZDgtYmRhMy03MmMyNjNmYzg5NDciLCJ1c2VyTmFtZSI6IlNvbnlhIiwiZW1haWwiOiJTb255YUBnbWFpbC5jb20iLCJyb2xlcyI6InVzZXIiLCJpc1Jlc2V0IjowLCJpYXQiOjE2ODcyOTEwMzJ9.M3R0PqkiwwGsx40acWa-AImz3P1HZDzVbxT7RATBuTo
 
